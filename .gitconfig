@@ -1,0 +1,20 @@
+[user]
+	email = vnys@equinor.com
+	name = Victor Nystad
+	signingkey = F9704266A55A2703
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	so = sparse-checkout
+	graph  = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
+[pull]
+	rebase = merges
+[core]
+	editor = nvim
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
