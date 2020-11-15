@@ -1,0 +1,1 @@
+/home/vnys/.fzf/shell/key-bindings.fish
