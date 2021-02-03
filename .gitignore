@@ -1,2 +1,7 @@
 *
 !.gitignore
+!.gnupg
+!.gnupg/gpg-agent.conf
+!.config
+!.themes
+!.themes/**/*
