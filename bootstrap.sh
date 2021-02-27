@@ -3,8 +3,8 @@
 function setup
 #  rm -rf ~/.config/fish
   ln -s ~/dotfiles/.config/fish ~/.config/fish
-  ln -s ~/dotfiles/.gitconfig
-  ln -s ~/.themes
+  ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+  ln -s ~/dotfiles/.themes ~/.themes
 end
 
 function install-linux-packages
@@ -16,7 +16,7 @@ end
 
 function install-homebrew
   echo "Installing Homebrew…"
-  wget -qO- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+  wget -qO- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash; exit
   /home/linuxbrew/.linuxbrew/bin/brew shellenv >> ~/.config/fish/config.fish
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
