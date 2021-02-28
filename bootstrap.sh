@@ -16,11 +16,16 @@ end
 
 function install-homebrew
   echo "Installing Homebrew…"
-  sudo git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew
-  sudo chown -R (whoami) /home/linuxbrew/
-  echo "eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.config/fish/config.fish
+  # sudo git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew  
+  # sudo chown -R (whoami) /home/linuxbrew/
+  # echo "eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.config/fish/config.fish
   # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   # brew install exa
+  git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+  mkdir ~/.linuxbrew/bin
+  ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
+  echo "eval (~/.linuxbrew/bin/brew shellenv)" >> ~/.config/fish/config.fish
+  eval (~/.linuxbrew/bin/brew shellenv)
 end
 
 function download-jetbrains-mono
