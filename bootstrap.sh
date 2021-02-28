@@ -1,7 +1,7 @@
 #!/usr/bin/fish
 
 function setup
-  mv ~/.config/fish ~/.config/old-fish
+  # mv ~/.config/fish ~/.config/old-fish
   mv ~/.gitconfig ~/.old-gitconfig
   ln -s ~/dotfiles/.config/fish ~/.config/fish
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -16,10 +16,7 @@ end
 
 function install-homebrew
   echo "Installing Homebrew…"
-  wget -qO- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash 
-end
-
-function install-homebrew-packages
+  sudo git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew/brew
   /home/linuxbrew/.linuxbrew/bin/brew shellenv >> ~/.config/fish/config.fish
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   brew install exa
@@ -35,5 +32,4 @@ end
 setup
 install-linux-packages
 install-homebrew
-install-homebrew-packages
 # download-jetbrains-mono
