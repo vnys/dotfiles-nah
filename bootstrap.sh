@@ -11,21 +11,17 @@ end
 function install-linux-packages
   echo "Installing Linux stuff…"
   set -x DEBIAN_FRONTEND noninteractive
-  sudo echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
-  sudo echo "deb http://ftp.be.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list
-  sudo apt-get update \
-    && apt-get -y install --no-install-recommends -t stable silversearcher-ag \
-    && apt-get -y install --no-install-recommends -t buster-backports git jq fzf fish neovim \
-    && apt-get -y install --no-install-recommends -t unstable exa
-  # sudo apt-get -y install build-essential
+  sudo apt-get -y install build-essential
 end
 
 function install-homebrew
   echo "Installing Homebrew…"
-  wget -qO- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash; exit
+  wget -qO- https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash 
+end
+
+function install-homebrew-packages
   /home/linuxbrew/.linuxbrew/bin/brew shellenv >> ~/.config/fish/config.fish
   eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
   brew install exa
 end
 
@@ -38,5 +34,6 @@ end
 
 setup
 install-linux-packages
-# install-homebrew
-download-jetbrains-mono
+install-homebrew
+install-homebrew-packages
+# download-jetbrains-mono
