@@ -17,6 +17,7 @@ end
 function install-homebrew
   echo "Installing Homebrew…"
   sudo git clone https://github.com/Homebrew/brew /home/linuxbrew/.linuxbrew
+  sudo chown -R (whoami) /home/linuxbrew/
   echo "eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.config/fish/config.fish
   # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
   # brew install exa
