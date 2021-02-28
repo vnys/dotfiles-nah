@@ -11,8 +11,8 @@ end
 function install-linux-packages
   echo "Installing Linux stuff…"
   set -x DEBIAN_FRONTEND noninteractive
-  echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
-  echo "deb http://ftp.be.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list
+  sudo echo "deb http://deb.debian.org/debian buster-backports main" >> /etc/apt/sources.list
+  sudo echo "deb http://ftp.be.debian.org/debian unstable main contrib non-free" >> /etc/apt/sources.list
   sudo apt-get update \
     && apt-get -y install --no-install-recommends -t stable silversearcher-ag \
     && apt-get -y install --no-install-recommends -t buster-backports git jq fzf fish neovim \
